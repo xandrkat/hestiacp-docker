@@ -2,16 +2,11 @@ services:
   backend:
     hostname: cp.xandr
     domainname: cp.xandr.pp.ua
-    env_file:
-      - .env.docker
     build:
      context: ./
      dockerfile: Dockerfile
-     args:
-        PORT: ${PORT}
-        HOSTNAME: ${HOSTNAME}
-        EMAIL: ${EMAIL}
-        PASSWORD: ${PASSWORD}
+    env_file:
+      - .env.docker
     ports:
      - 80:80
      - 443:443 
